@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './homeStyle.css'
 import logo from './life-vest-logo3.jpg'
 import Typing from 'react-typing-animation';
@@ -34,11 +34,9 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function Home (){
-
     const classes = useStyles();
 
     return(
-        
         <div className="a">
           
           <div className="aa">

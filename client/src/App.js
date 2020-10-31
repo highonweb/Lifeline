@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-// import getWeb3 from './getWeb3';
-
-import React from 'react'
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import Web3ContextProvider from './contexts/Web3Context';
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar/>
       <Switch>
         <Route exact path="/">
-          {/* <Home /> */}
+            <Home />
         </Route>
         <Route path="/inventory">
          {/* inventory */}
