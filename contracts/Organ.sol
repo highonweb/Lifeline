@@ -18,6 +18,7 @@ contract Organ is DonorContract {
     }
 
     function deceased(uint256 _id) public orgsOnly {
+        updateDonationStatus(_id);
         bool eyes;
         bool kidney;
         bool liver;

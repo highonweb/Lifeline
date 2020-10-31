@@ -63,7 +63,7 @@ contract DonorContract is DonorDetails {
     }
 
     //only organisation update donation status
-    function updateDonationStatus(uint256 _id) external orgsOnly {
+    function updateDonationStatus(uint256 _id) internal orgsOnly {
         donors[_id].donationStatus = true;
         // emit donationStatusUpdateEvent(_id, donors[_id].donationStatus);
     }
