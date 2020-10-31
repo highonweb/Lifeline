@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function listOrg() {
+function ListOrgan() {
 
   const classes = useStyles();
 
@@ -189,4 +189,4 @@ function listOrg() {
 
 };
 
-export default ListOrg;
+export default ListOrgan;
