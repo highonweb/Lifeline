@@ -8,7 +8,7 @@ contract Organ is DonorContract,Organisation {
         bool donationStatus;
     }
         organ[] public Eyes;
-        uint public total;
+        uint public totalEyes;
         organ[] public Kidney;
         uint public totalKidney;
         organ[] public Liver;
@@ -35,17 +35,17 @@ contract Organ is DonorContract,Organisation {
             Eyes.push(organ(_id,msg.sender));
             totalEyes++;
         }
-        else if (kidney) {
+        if (kidney) {
             Kidney.push(organ(_id,msg.sender));
             totalKidney++;
-        } else if (liver) {
+        } if (liver) {
             Liver.push(organ(_id,msg.sender));
             totalLiver++;
-        } else if (heart) {
+        } if (heart) {
             Heart.push(organ(_id,msg.sender));
             totalHeart++;
         }
-        else {
+        if {
             Lungs.push(organ(_id,msg.sender));
             totalLungs++;
         }
