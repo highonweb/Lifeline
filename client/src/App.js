@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Web3ContextProvider from './contexts/Web3Context';
 import getWeb3 from './getWeb3';
 import RequestOrgan from './contracts/RequestOrgan.json';
+import ListOrgan from './components/listOrgan/ListOrgan';
 
 function App() {
   return (
@@ -16,12 +17,16 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/inventory">{/* inventory */}</Route>
+        <Route path="/inventory">
+          <ListOrgan />
+        </Route>
         <Route exact path="/inventory/:organ">
           {/* list of organ */}
         </Route>
+        <Route exact path="/donate">
+          {/* list of organ */}
+        </Route>
         <Route path="/organisation">{/* organisation */}</Route>
-        <Route path="/requestportal">{/* request portal */}</Route>
       </Switch>
     </Router>
   );

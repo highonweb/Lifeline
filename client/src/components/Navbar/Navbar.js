@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {Web3Context} from '../../contexts/Web3Context';
-
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -31,17 +30,25 @@ function Navbar() {
       <Toolbar>
         <Typography variant="h3" className={classes.title}>
           <Button color="inherit" className="text">
-            Life Vest
+            <Link className="link" to="/">
+              Life Vest
+            </Link>
           </Button>
         </Typography>
         <Button color="inherit" className="text">
-          Donate
+          <Link className="link" to="/donate">
+            Donate
+          </Link>
         </Button>
         <Button color="inherit" className="text">
-          Inventory
+          <Link className="link" to="/inventory">
+            Inventory
+          </Link>
         </Button>
         <Button color="inherit" className="text">
-          Request
+          <Link className="link" to="/organisations">
+            Organisations
+          </Link>
         </Button>
       </Toolbar>
     </AppBar>
