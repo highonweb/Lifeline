@@ -57,6 +57,7 @@ contract DonorContract is DonorDetails {
         } else {
             delete donors[_id];
         }
+        totalDonors--;
 
         // emit deleteDonorEvent(_id);
     }
