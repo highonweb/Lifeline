@@ -1,48 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Web3ContextProvider from './contexts/Web3Context';
+import getWeb3 from './getWeb3';
+import RequestOrgan from './contracts/RequestOrgan.json';
 
 function App() {
   return (
     <Router>
-      <Navbar/>
+      <Web3ContextProvider>
+        <Navbar />
+      </Web3ContextProvider>
       <Switch>
         <Route exact path="/">
-            <Home />
+          <Home />
         </Route>
-        <Route path="/inventory">
-         {/* inventory */}
-        </Route>
+        <Route path="/inventory">{/* inventory */}</Route>
         <Route exact path="/inventory/:organ">
           {/* list of organ */}
         </Route>
-        <Route path="/organisation">
-         {/* organisation */}
-        </Route>
-        <Route path="/requestportal">
-         {/* request portal */}
-        </Route>
+        <Route path="/organisation">{/* organisation */}</Route>
+        <Route path="/requestportal">{/* request portal */}</Route>
       </Switch>
     </Router>
-  )
+  );
 }
 
-export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default App;
 
 // class App extends Component {
 //   state = {storageValue: 0, web3: null, accounts: null, contract: null};

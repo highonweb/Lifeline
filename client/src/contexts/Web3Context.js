@@ -1,32 +1,35 @@
-import React,{createContext,useState} from 'react';
+import React, {createContext, useState, useEffect} from 'react';
 import RequestOrgan from '../contracts/RequestOrgan.json';
 import getWeb3 from '../getWeb3';
 
 export const Web3Context = createContext();
 
-async function Web3ContextProvider(props) {
-    const [web3, setweb3] = useState({});
-    const [accts, setaccts] = useState({});
-    const [ins, setins] = useState({});
-
+function Web3ContextProvider(props) {
+  const [web3, setweb3] = useState({});
+  const [accts, setaccts] = useState({});
+  const [ins, setins] = useState({});
+  async function fetch() {
     const web3Instance = await getWeb3();
-    const accounts = await web3.eth.getAccounts();
-    const networkId = await web3.eth.net.getId();
+    const accounts = await web3Instance.eth.getAccounts();
+    const networkId = await web3Instance.eth.net.getId();
     const deployedNetwork = RequestOrgan.networks[networkId];
-    const instance = new web3.eth.Contract(
-        RequestOrgan.abi,
+    const instance = new web3Instance.eth.Contract(
+      RequestOrgan.abi,
       deployedNetwork && deployedNetwork.address
     );
-
     setins(instance);
     setweb3(web3Instance);
     setaccts(accounts);
+  }
+  useEffect(() => {
+    fetch();
+  }, [web3]);
 
-    return (
-       <Web3Context.Provider value ={{web3,accts,ins}} >
-           {props.chidren}
-       </Web3Context.Provider>
-    )
+  return (
+    <Web3Context.Provider value={{web3, accts, ins}}>
+      {props.children}
+    </Web3Context.Provider>
+  );
 }
 
-export default Web3ContextProvider
+export default Web3ContextProvider;
