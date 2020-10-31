@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.21 <0.7.0;
+import "./OrgsOnlyContract.sol";
 
-contract DonorDetails {
+contract DonorDetails is OrgsOnlyContract {
     struct Organ {
         bool isEyes;
         bool isKidney;

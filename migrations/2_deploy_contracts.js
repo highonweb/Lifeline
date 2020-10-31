@@ -1,5 +1,5 @@
-var Organisation = artifacts.require('./Organisation.sol');
+var RequestOrgan = artifacts.require('./RequestOrgan.sol');
 
 module.exports = function (deployer) {
-  deployer.deploy(Organisation);
+  deployer.deploy(RequestOrgan);
 };

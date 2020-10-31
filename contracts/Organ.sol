@@ -1,38 +1,20 @@
 pragma solidity >=0.5.0 <0.8.0;
 import "./DonorContract.sol";
-import "./Organisation.sol";
 
-contract Organ is DonorContract, Organisation {
+contract Organ is DonorContract {
     struct organ {
         uint256 donorId;
         address orgAddress;
         bool donationStatus;
+        string organName;
     }
-    organ[] public Eyes;
-    uint256 public totalEyes;
-    organ[] public Kidney;
-    uint256 public totalKidney;
-    organ[] public Liver;
-    uint256 public totalLiver;
-    organ[] public Heart;
-    uint256 public totalHeart;
-    organ[] public Lungs;
-    uint256 public totalLungs;
+
+    organ[] public organs;
+
+    uint256 public totalOrgans;
 
     constructor() public {
-        totalEyes = 0;
-        totalKidney = 0;
-        totalLiver = 0;
-        totalHeart = 0;
-        totalLungs = 0;
-    }
-
-    modifier orgsOnly() {
-        for (uint256 i = 0; i < totalOrgs; i++) {
-            if (orgs[i].ad == msg.sender) {
-                _;
-            }
-        }
+        totalOrgans = 0;
     }
 
     function deceased(uint256 _id) public orgsOnly {
@@ -43,24 +25,24 @@ contract Organ is DonorContract, Organisation {
         bool lung;
         (, , , , , , eyes, kidney, liver, heart, lung) = donorDetails(_id);
         if (eyes) {
-            Eyes.push(organ(_id, msg.sender, false));
-            totalEyes++;
+            organs.push(organ(_id, msg.sender, false, "Eye"));
+            totalOrgans++;
         }
         if (kidney) {
-            Kidney.push(organ(_id, msg.sender, false));
-            totalKidney++;
+            organs.push(organ(_id, msg.sender, false, "Kidney"));
+            totalOrgans++;
         }
         if (liver) {
-            Liver.push(organ(_id, msg.sender, false));
-            totalLiver++;
+            organs.push(organ(_id, msg.sender, false, "Liver"));
+            totalOrgans++;
         }
         if (heart) {
-            Heart.push(organ(_id, msg.sender, false));
-            totalHeart++;
+            organs.push(organ(_id, msg.sender, false, "Heart"));
+            totalOrgans++;
         }
         if (lung) {
-            Lungs.push(organ(_id, msg.sender, false));
-            totalLungs++;
+            organs.push(organ(_id, msg.sender, false, "Lung"));
+            totalOrgans++;
         }
     }
 }
