@@ -104,7 +104,7 @@ function ListOrgan() {
          </div>
 
          <div className='number'>
-               Available: 10
+               Available: {eyes}
          </div>
 
    </div>
@@ -129,7 +129,7 @@ function ListOrgan() {
          </div>
 
          <div className='number'>
-               Available: 10
+               Available: {kidneys}
          </div>
 
    </div>
@@ -154,7 +154,7 @@ function ListOrgan() {
          </div>
 
          <div className='number'>
-               Available: 10
+               Available: {hearts}
          </div>
 
    </div>
@@ -179,7 +179,7 @@ function ListOrgan() {
          </div>
 
          <div className='number'>
-               Available: 10
+               Available: {lungs}
          </div>
 
    </div>
@@ -204,7 +204,7 @@ function ListOrgan() {
          </div>
 
          <div className='number'>
-               Available: 10
+               Available: {livers}
          </div>
 
    </div>
