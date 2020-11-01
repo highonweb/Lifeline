@@ -20,7 +20,9 @@ function App() {
           <Home />
         </Route>
         <Route path="/inventory">
-          <ListOrgan />
+          <Web3ContextProvider> 
+             <ListOrgan />
+          </Web3ContextProvider>
         </Route>
         <Route exact path="/inventory/:organ">
           {/* list of organ */}
