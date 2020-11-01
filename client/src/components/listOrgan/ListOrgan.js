@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState,useContext} from 'react'
 import './listOrgansStyle.css'
 import logo from './life-vest-logo3.jpg'
 import Typing from 'react-typing-animation';
@@ -14,7 +14,7 @@ import img_b from './organ2.jpg'
 import img_c from './organ3.jpg'
 import img_d from './organ4.jpg'
 import img_e from './organ5.png'
-
+import {Web3Context} from '../../contexts/Web3Context';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -37,8 +37,40 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ListOrgan() {
+      const[eyes,setEyes] = useState(0);
+      const[kidneys,setKidneys] = useState(0);
+      const[livers,setLivers] = useState(0);
+      const[hearts,setHearts] = useState(0);
+      const[lungs,setLungs] = useState(0);
+      const[total,setTotal] = useState(0);
+      const {web3, ins, accts} = useContext(Web3Context);
 
-  const classes = useStyles();
+      async function fetchOrgan () {
+            if(ins.methods) {
+                 const totalOrgans =  await ins.methods.totalOrgans().call();
+                 const eye = await ins.methods.Eyes().call();
+                 const kidney = await ins.methods.Kidney().call();
+                 const liver = await ins.methods.Liver().call();
+                 const heart = await ins.methods.Heart().call();
+                 const lung = await ins.methods.Lung().call();
+
+                 setEyes(eye);
+                 setKidneys(kidney);
+                 setLivers(liver);
+                 setHearts(heart);
+                 setLungs(lung);
+                 setTotal(totalOrgans);
+
+                 console.log(eye,kidney,liver,heart,lung,totalOrgans);
+            }
+      }
+
+
+      useEffect(()=>{
+            fetchOrgan();
+      },[ins]);
+
+      const classes = useStyles();
 
      return(
 
