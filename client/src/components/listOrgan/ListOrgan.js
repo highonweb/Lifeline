@@ -215,6 +215,36 @@ function ListOrgan() {
 
           </div>
 
+
+
+          <div className='xyz'>
+
+<Card className="details">
+
+
+<CardContent>
+<Typography variant="body2" color="textSecondary" component="p">
+<div className='insidecard'>
+
+<div className='organ'>
+      Total Organs Available
+</div>
+
+<div className='number'>
+      {total}
+</div>
+
+</div>
+</Typography>
+</CardContent>
+
+</Card>
+
+</div>
+
+
+
+
         </div>
 
      );
