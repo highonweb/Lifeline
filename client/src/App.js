@@ -6,7 +6,9 @@ import Web3ContextProvider from './contexts/Web3Context';
 import getWeb3 from './getWeb3';
 import RequestOrgan from './contracts/RequestOrgan.json';
 import ListOrgan from './components/listOrgan/ListOrgan';
-
+import DonationForm from './components/DonationForm/index';
+import IndOrg from './components/IndOrg/IndOrg.js';
+import Orgdash from './components/Orgdash/Orgdash';
 function App() {
   return (
     <Router>
@@ -24,9 +26,13 @@ function App() {
           {/* list of organ */}
         </Route>
         <Route exact path="/donate">
-          {/* list of organ */}
+          <DonationForm />
         </Route>
-        <Route path="/organisation">{/* organisation */}</Route>
+        <Route path="/organisations">
+          <Web3ContextProvider>
+            <Orgdash />
+          </Web3ContextProvider>
+        </Route>
       </Switch>
     </Router>
   );
