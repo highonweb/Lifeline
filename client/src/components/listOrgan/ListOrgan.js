@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ListOrgan() {
-      const[eyes,setEyes] = useState(0);
+      const[eyes,setEyes] = useState(5);
       const[kidneys,setKidneys] = useState(0);
       const[livers,setLivers] = useState(0);
       const[hearts,setHearts] = useState(0);
@@ -46,29 +46,28 @@ function ListOrgan() {
       const {web3, ins, accts} = useContext(Web3Context);
 
       async function fetchOrgan () {
-            if(ins.methods) {
-                 const totalOrgans =  await ins.methods.totalOrgans().call();
-                 const eye = await ins.methods.Eyes().call();
-                 const kidney = await ins.methods.Kidney().call();
-                 const liver = await ins.methods.Liver().call();
-                 const heart = await ins.methods.Heart().call();
-                 const lung = await ins.methods.Lung().call();
-
-                 setEyes(eye);
-                 setKidneys(kidney);
-                 setLivers(liver);
-                 setHearts(heart);
-                 setLungs(lung);
-                 setTotal(totalOrgans);
-
-                 console.log(eye,kidney,liver,heart,lung,totalOrgans);
+            if (ins.methods) {
+                  const totalOrgans =  await ins.methods.totalOrgans().call();
+                  const eye = await ins.methods.Eyes().call();
+                  const kidney = await ins.methods.Kidney().call();
+                  const liver = await ins.methods.Liver().call();
+                  const heart = await ins.methods.Heart().call();
+                  const lung = await ins.methods.Lung().call();
+ 
+                  setEyes(eye);
+                  setKidneys(kidney);
+                  setLivers(liver);
+                  setHearts(heart);
+                  setLungs(lung);
+                  setTotal(totalOrgans);                  
             }
+                 
       }
 
 
       useEffect(()=>{
             fetchOrgan();
-      },[ins]);
+      });
 
       const classes = useStyles();
 

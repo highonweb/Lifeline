@@ -8,7 +8,8 @@ function Web3ContextProvider(props) {
   const [web3, setweb3] = useState({});
   const [accts, setaccts] = useState({});
   const [ins, setins] = useState({});
-  async function fetch() {
+
+  async function web3Fetch() {
     const web3Instance = await getWeb3();
     const accounts = await web3Instance.eth.getAccounts();
     const networkId = await web3Instance.eth.net.getId();
@@ -21,9 +22,10 @@ function Web3ContextProvider(props) {
     setweb3(web3Instance);
     setaccts(accounts);
   }
+
   useEffect(() => {
-    fetch();
-  }, [web3]);
+    web3Fetch();
+  },[]);
 
   return (
     <Web3Context.Provider value={{web3, accts, ins}}>

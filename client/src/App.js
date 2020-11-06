@@ -8,21 +8,18 @@ import RequestOrgan from './contracts/RequestOrgan.json';
 import ListOrgan from './components/listOrgan/ListOrgan';
 import DonationForm from './components/DonationForm/index';
 import IndOrg from './components/IndOrg/IndOrg.js';
-import Orgdash from './components/Orgdash/Orgdash';
+// import Orgdash from './components/Orgdash/Orgdash';
 function App() {
   return (
+   <Web3ContextProvider>  
     <Router>
-      <Web3ContextProvider>
-        <Navbar />
-      </Web3ContextProvider>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="/inventory">
-          <Web3ContextProvider> 
-             <ListOrgan />
-          </Web3ContextProvider>
+           <ListOrgan />
         </Route>
         <Route exact path="/inventory/:organ">
           {/* list of organ */}
@@ -31,12 +28,13 @@ function App() {
           <DonationForm />
         </Route>
         <Route path="/organisations">
-          <Web3ContextProvider>
-            <Orgdash />
-          </Web3ContextProvider>
+          {/* <Web3ContextProvider> */}
+            {/* <Orgdash /> */}
+          {/* </Web3ContextProvider> */}
         </Route>
       </Switch>
     </Router>
+  </Web3ContextProvider>
   );
 }
 

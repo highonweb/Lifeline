@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Navbar() {
   const classes = useStyles();
-  const {web3, ins, accts} = useContext(Web3Context);
+  // const {web3, ins, accts} = useContext(Web3Context);
 
   return (
     <AppBar position="static" className="bar">
