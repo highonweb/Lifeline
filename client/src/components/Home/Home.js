@@ -1,7 +1,6 @@
 import React,{useContext} from 'react'
 import './homeStyle.css'
 import logo from './life-vest-logo3.jpg'
-import Typing from 'react-typing-animation';
 import img_a from './image1.jpg'
 import img_b from './image2.jpg'
 import img_c from './image3.jpg'
@@ -49,9 +48,9 @@ function Home (){
 
           <div className="ab">
 
-          <Typing speed={120}>              
+                
               <span>LifeVest - Save and Donate Life</span>          
-          </Typing>
+         
 
           </div>
 
@@ -76,9 +75,9 @@ function Home (){
 
               <div className="movingd">
 
-              <Typing speed={120}>              
+                       
               <span>Mission</span>          
-              </Typing>
+            
                      
               </div>
 
@@ -88,9 +87,9 @@ function Home (){
 
               <div className="movingd">
 
-              <Typing speed={120}>              
+                       
               <span>Vision</span>          
-              </Typing>
+            
                      
               </div>
               
@@ -128,9 +127,9 @@ function Home (){
 
               <div className="movingd">
 
-              <Typing speed={120}>              
+                       
               <span>Our Focus</span>          
-              </Typing>
+            
                      
               </div>
 

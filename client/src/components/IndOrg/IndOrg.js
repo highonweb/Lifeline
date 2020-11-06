@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import './indOrgstyle.css';
 import logo from './life-vest-logo3.jpg';
-import Typing from 'react-typing-animation';
+
 import {Web3Context} from '../../contexts/Web3Context';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -82,9 +82,9 @@ function IndOrg() {
         <img src={logo} className="log"></img>
 
         <div className="ab">
-          <Typing speed={300}>
+         
             <span>Heart</span>
-          </Typing>
+        
         </div>
       </div>
 

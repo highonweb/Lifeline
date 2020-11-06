@@ -1,7 +1,7 @@
 import React,{useEffect,useState,useContext} from 'react'
 import './listOrgansStyle.css'
 import logo from './life-vest-logo3.jpg'
-import Typing from 'react-typing-animation';
+
 
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
@@ -80,9 +80,8 @@ function ListOrgan() {
             <img src={logo} className='log'></img>
 
             <div className='ab'>
-            <Typing speed={120}>              
-              <span>Available Organs</span>          
-            </Typing>
+               
+              <span>Available Organs</span>        
             </div>
 
           </div>
