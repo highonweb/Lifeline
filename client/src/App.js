@@ -1,40 +1,40 @@
-import React, {useState} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import Web3ContextProvider from './contexts/Web3Context';
-import getWeb3 from './getWeb3';
-import RequestOrgan from './contracts/RequestOrgan.json';
-import ListOrgan from './components/listOrgan/ListOrgan';
-import DonationForm from './components/DonationForm/index';
-import IndOrg from './components/IndOrg/IndOrg.js';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import Web3ContextProvider from "./contexts/Web3Context";
+import getWeb3 from "./getWeb3";
+import RequestOrgan from "./contracts/RequestOrgan.json";
+import ListOrgan from "./components/listOrgan/ListOrgan";
+import DonationForm from "./components/DonationForm/index";
+import IndOrg from "./components/IndOrg/IndOrg.js";
 // import Orgdash from './components/Orgdash/Orgdash';
 function App() {
   return (
-   <Web3ContextProvider>  
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/inventory">
-           <ListOrgan />
-        </Route>
-        <Route exact path="/inventory/:organ">
-          {/* list of organ */}
-        </Route>
-        <Route exact path="/donate">
-          <DonationForm />
-        </Route>
-        <Route path="/organisations">
-          {/* <Web3ContextProvider> */}
+    <Web3ContextProvider>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/inventory">
+            <ListOrgan />
+          </Route>
+          <Route exact path="/inventory/:organ">
+            {/* list of organ */}
+          </Route>
+          <Route exact path="/donate">
+            <DonationForm />
+          </Route>
+          <Route path="/organisations">
+            {/* <Web3ContextProvider> */}
             {/* <Orgdash /> */}
-          {/* </Web3ContextProvider> */}
-        </Route>
-      </Switch>
-    </Router>
-  </Web3ContextProvider>
+            {/* </Web3ContextProvider> */}
+          </Route>
+        </Switch>
+      </Router>
+    </Web3ContextProvider>
   );
 }
 

@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import styles from './style.module.css';
-import logo from './life-vest-logo3.jpg';
-import Button from '@material-ui/core/Button';
-import {formatMs} from '@material-ui/core';
+import React, { useState } from "react";
+import styles from "./style.module.css";
+import logo from "./life-vest-logo3.jpg";
+import Button from "@material-ui/core/Button";
+import { formatMs } from "@material-ui/core";
 
 const DonationForm = () => {
   const [response, setResponse] = useState({
-    name: '',
-    bloodGroup: '',
-    id: '',
-    address: '',
+    name: "",
+    bloodGroup: "",
+    id: "",
+    address: "",
     organs: [],
   });
 

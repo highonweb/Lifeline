@@ -1,6 +1,6 @@
-import React, {createContext, useState, useEffect} from 'react';
-import RequestOrgan from '../contracts/RequestOrgan.json';
-import getWeb3 from '../getWeb3';
+import React, { createContext, useState, useEffect } from "react";
+import RequestOrgan from "../contracts/RequestOrgan.json";
+import getWeb3 from "../getWeb3";
 
 export const Web3Context = createContext();
 
@@ -25,10 +25,10 @@ function Web3ContextProvider(props) {
 
   useEffect(() => {
     web3Fetch();
-  },[]);
+  }, []);
 
   return (
-    <Web3Context.Provider value={{web3, accts, ins}}>
+    <Web3Context.Provider value={{ web3, accts, ins }}>
       {props.children}
     </Web3Context.Provider>
   );

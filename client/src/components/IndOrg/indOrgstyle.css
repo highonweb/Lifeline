@@ -1,36 +1,33 @@
 .aa {
-    display: flex;
-    justify-content: center;
-    margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
 }
 
 .ab {
-    margin-left: 5vw;
-    margin-top: 10vh;
-    font-size: 50px;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     font-weight: 800;
+  margin-left: 5vw;
+  margin-top: 10vh;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 800;
 }
 
 .log {
-
-    border-radius: 50%;
-    max-width: 15vw;
+  border-radius: 50%;
+  max-width: 15vw;
 }
 
 .a {
-    
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    overflow-x: none;
-    background-color: #f6f6f6;
-    height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: none;
+  background-color: #f6f6f6;
+  height: 100vh;
 }
 
 .ab {
-
-    margin-top: 10vh;
-    display: flex;
-    justify-content: center;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
 }

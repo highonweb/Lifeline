@@ -1,17 +1,17 @@
-import React, {useContext, useState, useEffect} from 'react';
-import './Orgdashstyle.css';
-import logo from './life-vest-logo3.jpg';
-import Typing from 'react-typing-animation';
-import {Web3Context} from '../../contexts/Web3Context';
-import {makeStyles} from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
+import React, { useContext, useState, useEffect } from "react";
+import "./Orgdashstyle.css";
+import logo from "./life-vest-logo3.jpg";
+import Typing from "react-typing-animation";
+import { Web3Context } from "../../contexts/Web3Context";
+import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
     maxWidth: 360,
     minWidth: 300,
     backgroundColor: theme.palette.background.paper,
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 function Orgdash() {
   const classes = useStyles();
   const [Request, setRequest] = useState([]);
-  const {ins} = useContext(Web3Context);
+  const { ins } = useContext(Web3Context);
 
   async function fetchOrganisation() {
     if (ins.methods) {

@@ -1,17 +1,15 @@
 .bar {
-
-    background-color: #ff9933 !important;
+  background-color: #ff9933 !important;
 }
 
 .text {
-
-    font-size: 19px !important;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
-    font-weight: 700 !important;
-    margin-left: 1vw !important;
-    margin-right: 1vw !important;
+  font-size: 19px !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif !important;
+  font-weight: 700 !important;
+  margin-left: 1vw !important;
+  margin-right: 1vw !important;
 }
-.link{
-    text-decoration: none;
-    color: white;
+.link {
+  text-decoration: none;
+  color: white;
 }

@@ -1,16 +1,16 @@
-import React, {useContext, useEffect, useState} from 'react';
-import './indOrgstyle.css';
-import logo from './life-vest-logo3.jpg';
+import React, { useContext, useEffect, useState } from "react";
+import "./indOrgstyle.css";
+import logo from "./life-vest-logo3.jpg";
 
-import {Web3Context} from '../../contexts/Web3Context';
-import {withStyles, makeStyles} from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { Web3Context } from "../../contexts/Web3Context";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -24,35 +24,35 @@ const StyledTableCell = withStyles((theme) => ({
 
 const StyledTableRow = withStyles((theme) => ({
   root: {
-    '&:nth-of-type(odd)': {
+    "&:nth-of-type(odd)": {
       backgroundColor: theme.palette.action.hover,
     },
   },
 }))(TableRow);
 
 function createData(name, calories, fat, carbs, protein) {
-  return {name, calories, fat, carbs, protein};
+  return { name, calories, fat, carbs, protein };
 }
 
 const rows = [
-  createData('Heart', 'A+', 'Chennai', 'casbin', 4.0),
-  createData('Heart', 'B+', 'Banglore', 'casbin', 4.3),
-  createData('Heart', 'AB+', 'Calcutta', 'casbin', 6.0),
-  createData('Heart', 'o+', 'Delhi', 'casbin', 4.3),
-  createData('Heart', 'B-', 'Mumbai', 'casbin', 3.9),
+  createData("Heart", "A+", "Chennai", "casbin", 4.0),
+  createData("Heart", "B+", "Banglore", "casbin", 4.3),
+  createData("Heart", "AB+", "Calcutta", "casbin", 6.0),
+  createData("Heart", "o+", "Delhi", "casbin", 4.3),
+  createData("Heart", "B-", "Mumbai", "casbin", 3.9),
 ];
 
 const useStyles = makeStyles({
   table: {
     minWidth: 700,
-    maxWidth: '100%',
+    maxWidth: "100%",
   },
 });
 
 function IndOrg() {
   const [Orgs, setOrgs] = useState([]);
   const classes = useStyles();
-  const {ins} = useContext(Web3Context);
+  const { ins } = useContext(Web3Context);
 
   async function fetchOrganisation() {
     if (ins.methods) {
@@ -82,14 +82,12 @@ function IndOrg() {
         <img src={logo} className="log"></img>
 
         <div className="ab">
-         
-            <span>Heart</span>
-        
+          <span>Heart</span>
         </div>
       </div>
 
       <div className="ab">
-        <TableContainer component={Paper} style={{width: '80%'}}>
+        <TableContainer component={Paper} style={{ width: "80%" }}>
           <Table className={classes.table} aria-label="customized table">
             <TableHead>
               <TableRow>
